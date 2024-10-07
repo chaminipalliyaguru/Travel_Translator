@@ -1,0 +1,23 @@
+/* src/Navbar.css */
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .logo-img {
+    width: 40px; /* Adjust the size as needed */
+    height: auto;
+    margin-right: 10px; /* Space between the logo and text */
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+  
+  /* Remaining styles for menu and media queries are the same as before */
+  
