@@ -30,7 +30,7 @@ function FileUpload(){
 
     return (
         <div>
-            <h2>Upload your audio:</h2>
+            <h2>Upload your audio:</h2><br/>
             <form onSubmit={handleUpload}>
                 <input type="file" name="file" onChange={handleFile}/>
                 <button>Upload</button>
