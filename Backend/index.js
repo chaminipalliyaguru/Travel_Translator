@@ -16,19 +16,19 @@
 
 const express = require('express');
 const cors = require('cors');
-const app = express();
 require('dotenv').config();
 
+const { fromFile, upload } = require('./SpeechSynthesis');  // Import the middleware function
 
-const fromFile = require('./SpeechSynthesis');  // Import the middleware function
-
+const app = express();
 app.use(cors({ origin: '*' }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Use the function for your /api/language endpoint
-app.get('/api/language', fromFile);
+// Use the function for your /api/translate endpoint with POST method
+app.post('/api/translate', upload.single("audioFile"), fromFile);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
+
 
