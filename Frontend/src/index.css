@@ -5,7 +5,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: ;
+    font-family: 0;
   }
   
   .main {
@@ -40,3 +40,13 @@
     background-color: rgba(0,0,0,.6);
     /* background-color: #000000cc; */
   }
+
+  .wrapped-text {
+    max-width: 600px; /* Set a limit for the text width, adjust as needed */
+    word-wrap: break-word; /* Ensures long words wrap to the next line */
+    overflow-wrap: break-word; /* Alternative property for better browser support */
+    white-space: normal; /* Ensures the text wraps instead of continuing on one line */
+    line-height: 1.5; /* Optional: improve readability */
+    margin-top: 10px; /* Optional: add space above the text */
+}
+

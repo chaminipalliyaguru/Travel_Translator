@@ -66,6 +66,7 @@ import TranslationLanguage from '../src/Components/TranslationLanguage';
 import InputLanguage from './Components/InputLanguage';
 import FileUpload from './Components/FileUpload';
 import Header from './Components/Header';
+import './index.css'; // Import the CSS file
 
 const Main = () => {
     const [speechRecognitionLanguage, setSpeechRecognitionLanguage] = useState('en-US');
@@ -89,8 +90,11 @@ const Main = () => {
                 <InputLanguage setSpeechRecognitionLanguage={setSpeechRecognitionLanguage} /><br/><br/>
                 <TranslationLanguage setLanguage={setLanguage} /><br/><br/>
                 
-                <h3>Your text: {recognizedText}</h3><br/>
-                <h3>Translation: {translation}</h3>
+                <h3>Your text:</h3>
+                <p className="wrapped-text">{recognizedText}</p> {/* Applying the class for text wrapping */}
+                
+                <h3>Translation:</h3>
+                <p className="wrapped-text">{translation}</p> {/* Applying the class for text wrapping */}
             </div>
         </div>
     );
