@@ -1,7 +1,7 @@
-import { useState } from 'react'; // This should be at the top of the file
+import PropTypes from 'prop-types';
+
 
 function TranslationLanguage({ setLanguage }) {
-    const [value, setValue] = useState('');  // Now `useState` should work
     const options = [
         { label: "English", value: 'en' },
         { label: "Spanish", value: 'es' },
@@ -15,7 +15,6 @@ function TranslationLanguage({ setLanguage }) {
 
     function handleSelect(event) {
         const selectedValue = event.target.value;
-        setValue(selectedValue);
         setLanguage(selectedValue);  // Update parent with selected translation language
     }
 
@@ -36,6 +35,11 @@ function TranslationLanguage({ setLanguage }) {
         </div>
     );
 }
+
+// Adding prop-types for validation
+TranslationLanguage.propTypes = {
+    setLanguage: PropTypes.func.isRequired, // Validate as a required function
+};
 
 export default TranslationLanguage;
 

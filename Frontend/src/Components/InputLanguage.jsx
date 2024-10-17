@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import PropTypes from 'prop-types';
+
 
 function InputLanguage({ setSpeechRecognitionLanguage }) {
-    const [value, setValue] = useState('');
     const options = [
         { label: "English", value: 'en-US' },
         { label: "Sinhala", value: 'si-LK' },
@@ -15,7 +15,6 @@ function InputLanguage({ setSpeechRecognitionLanguage }) {
 
     function handleSelect(event) {
         const selectedValue = event.target.value;
-        setValue(selectedValue);
         setSpeechRecognitionLanguage(selectedValue);  // Update parent with selected language
     }
 
@@ -36,5 +35,10 @@ function InputLanguage({ setSpeechRecognitionLanguage }) {
         </div>
     );
 }
+
+// Adding prop-types for validation
+InputLanguage.propTypes = {
+    setSpeechRecognitionLanguage: PropTypes.func.isRequired, // Validate as a required function
+};
 
 export default InputLanguage;
