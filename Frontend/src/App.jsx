@@ -29,7 +29,7 @@ const Main = () => {
                 <TranslationLanguage setLanguage={setLanguage} /><br/><br/>
                 
                 <h3>Your text:</h3>
-                <p className="wrapped-text">{recognizedText}</p> {/* Applying the class for text wrapping */}
+                <p className="wrapped-text">{recognizedText}</p> <br/>{/* Applying the class for text wrapping */}
                 
                 <h3>Translation:</h3>
                 <p className="wrapped-text">{translation}</p> {/* Applying the class for text wrapping */}
